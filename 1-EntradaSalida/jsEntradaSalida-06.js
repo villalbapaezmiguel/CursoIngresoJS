@@ -8,7 +8,7 @@ function sumar()
 	let numDos = parseInt(document.getElementById("txtIdNumeroDos").value);
 	let resultado = numUno + numDos;
 	
-	alert(`la suma es ${resultado}`)
+	alert(`la suma es ${resultado}`);
 	
 }
 
