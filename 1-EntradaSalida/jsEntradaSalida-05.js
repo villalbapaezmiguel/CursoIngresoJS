@@ -5,7 +5,9 @@ function mostrar()
 {	
 	let nombre = document.getElementById("txtIdNombre").value ;
 	let edad = parseInt(document.getElementById("txtIdEdad").value);
+	let apellido = prompt("ingrese su apeliido");
 
-	alert(`Usted se llama ${nombre} y tiene ${edad} años`);
+	alert(`Usted se llama ${nombre} ${apellido} y tiene ${edad} años`);
 }
-
+//Villalba Paez Miguel
+//ejercicio 5bis
