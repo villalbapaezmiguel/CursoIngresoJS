@@ -16,7 +16,7 @@ function Rectangulo ()
 function Circulo () 
 {
     let radio = parseFloat(document.getElementById("txtIdRadio").value);
-    const pi = 3.14;
+    const pi = 3.14; 
     let perimetro = radio/pi;
     perimetro = perimetro*3;
     alert(`la cantidad de alambre a usar suria : ${perimetro}m`);
@@ -25,9 +25,13 @@ function Materiales ()
 {
 	let largo = parseInt(document.getElementById("txtIdLargo").value);
     let ancho = parseInt(document.getElementById("txtIdAncho").value);
-    let area = (largo*ancho)*2;
-    let cemento = 2;
-    let cal = 3;
+    let area = largo*ancho;
+    let cemento = area *2;
+    let cal = area *3;
+
+
+    alert("se necesitan "+cemento+ " bolsas de cemento" );
+    alert("y se necesitan "+cal+" bolsas de cal");
 
     
 
