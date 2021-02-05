@@ -6,8 +6,10 @@ C.Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de ca
 
 function Rectangulo () 
 {
-    let largo = parseInt(document.getElementById("txtIdLargo").value);
-    let ancho = parseInt(document.getElementById("txtIdAncho").value);
+    let largo = document.getElementById("txtIdLargo").value;
+    let ancho = document.getElementById("txtIdAncho").value;
+    largo= parseInt(largo);
+    ancho = parseInt(ancho);
     let area = (largo*ancho)*2;
     area = area*3;
     alert(`La cantidad de alambre a usar seria : ${area}m`);
@@ -15,7 +17,8 @@ function Rectangulo ()
 }
 function Circulo () 
 {
-    let radio = parseFloat(document.getElementById("txtIdRadio").value);
+    let radio = document.getElementById("txtIdRadio").value;
+    radio = parseFloat(radio);
     const pi = 3.14;
     let perimetro = radio/pi;
     perimetro = perimetro*3;
@@ -23,12 +26,18 @@ function Circulo ()
 }
 function Materiales () 
 {
-	let largo = parseInt(document.getElementById("txtIdLargo").value);
-    let ancho = parseInt(document.getElementById("txtIdAncho").value);
-    let area = (largo*ancho)*2;
-    let cemento = 2;
-    let cal = 3;
+    let largo = document.getElementById("txtIdLargo").value;
+    let ancho = document.getElementById("txtIdAncho").value;
+    largo = parseInt(largo);
+    ancho = parseInt(ancho);
+    let area = largo*ancho;
+    let cemento = area* 2;
+    let cal = area* 3;
 
+    alert(`Se necesitan ${cemento} bolsas de Cemento `);
+    alert(`Se necesitan ${cal} bolsas de Cal `);
     
-
 }
+//Miguel Villalba Paez 
+//1D
+//Funciona
