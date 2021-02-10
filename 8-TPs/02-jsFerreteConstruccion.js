@@ -17,9 +17,11 @@ function Rectangulo ()
 }
 function Circulo () 
 {
+
     let radio = document.getElementById("txtIdRadio").value;
     radio = parseFloat(radio);
     const pi = 3.14;
+
     let perimetro = radio/pi;
     perimetro = perimetro*3;
     alert(`la cantidad de alambre a usar suria : ${perimetro}m`);
