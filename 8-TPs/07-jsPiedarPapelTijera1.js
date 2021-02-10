@@ -6,24 +6,71 @@ a su opción  y le informaremos si ganó, empató o perdió.
 */
 var eleccionMaquina;
 
-function comenzar()
-{
-	
+function comenzar() {
+    let random = Math.floor(Math.random() * 3) + 1;
 
+    alert(random);
+    return random;
+}//FIN DE LA FUNCIÓN
+eleccionMaquina = comenzar();
+function piedra() {
+
+    let mensaje = "";
+
+    switch (eleccionMaquina) {
+        case 1:
+            mensaje = `Empate , Piedra con Piedra `;
+            break;
+
+        case 2:
+            mensaje = `Perdio , Papel envuelve Piedra `;
+            break;
+
+        case 3:
+            mensaje = `Gano , Piedra vence Tijeras `;
+            break;
+        default:
+    }
+    alert(mensaje);
 
 }//FIN DE LA FUNCIÓN
-function piedra()
-{
-	
+function papel() {
+    let mensaje = "";
+
+    switch (eleccionMaquina) {
+        case 1:
+            mensaje = `Gano , Papel envuelve Piedra`;
+            break;
+
+        case 2:
+            mensaje = `Empate , Papel con Papel `;
+            break;
+
+        case 3:
+            mensaje = `Perdio , Tijeras corta Papel `;
+            break;
+        default:
+    }
+    alert(mensaje);
 
 }//FIN DE LA FUNCIÓN
-function papel()
-{
+function tijera() {
+    let mensaje = "";
 
+    switch (eleccionMaquina) {
+        case 1:
+            mensaje = `Perdio , Piedra rompe Tijeras `;
+            break;
 
-}//FIN DE LA FUNCIÓN
-function tijera()
-{
-	
+        case 2:
+            mensaje = `Gano , Tijeras corta Papel `;
+            break;
+
+        case 3:
+            mensaje = `Empato , Tijeras con Tijeras `;
+            break;
+        default:
+    }
+    alert(mensaje);
 
 }//FIN DE LA FUNCIÓN

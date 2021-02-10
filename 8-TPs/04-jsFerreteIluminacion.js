@@ -8,60 +8,64 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 txtIdCantidad
  */
-function CalcularPrecio () 
-{
-    let cantidadLampara = document.getElementById("txtIdCantidad").value ;
-    let resultado = document.getElementById("txtIdprecioDescuento").value ;
-    let marca = document.getElementById("Marca").value ;
+function CalcularPrecio() {
+    let cantidadLampara = document.getElementById("txtIdCantidad").value;
+    let marca = document.getElementById("Marca").value;
     cantidadLampara = parseInt(cantidadLampara);
     let lamparas = 35;
     let descuento = 0;
-    let ingresosBrutos =0;
     let mensaje = "";
     let precioFinal = 0;
+    let ingresosBrutos = 0;
 
-    if(cantidadLampara >= 6){
-        descuento = 50 ;
-        resultado = descuento; 
-        mensaje = `el precio final es : ${precioFinal}`;
+    if (cantidadLampara >= 6) {
+        descuento = 50;
+
     }
-
-    if(cantidadLampara == 5){
-        if(marca === "ArgentinaLuz"){
+    if (cantidadLampara == 5) {
+        if (marca == "ArgentinaLuz") {
             descuento = 40;
-            lamparas = lamparas * 5;
-        }else if (marca != "ArgentinaLuz"){
-            descuento = 30 ;
+
+        } else if (marca != "ArgentinaLuz") {
+            descuento = 30;
+
         }
     }
-
-    if(cantidadLampara == 4){
-        if(marca == "ArgentinaLuz" || "FelipeLamparas"){
+    if (cantidadLampara == 4) {
+        if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
             descuento = 25;
-            lamparas = lamparas * 4;
-        }else if(marca != "ArgentinaLuz" || "FelipeLamparas"){
-            descuento = 20 ;
+
+        } else if (marca != "ArgentinaLuz" || marca != "FelipeLamparas") {
+            descuento = 20;
+
         }
+    }
+    if (cantidadLampara == 3) {
+        
+        if (marca == "ArgentinaLuz") {
+            descuento = 15;
+
+        } else if (marca == "FelipeLamparas") {
+            descuento = 10;
+
+        } else if (marca != "ArgentinaLuz" || marca != "FelipeLamparas") {
+            descuento = 5;
+
+        }
+    }
+    document.getElementById("txtIdprecioDescuento").value = descuento;
+    lamparas = lamparas * cantidadLampara;
+    precioFinal = lamparas * descuento / 100;
+    mensaje = `Usted compro ${cantidadLampara} lamparas , marca ${marca} y tiene un descuento del ${descuento}% 
+    el precio final es :${precioFinal}`;
+
+    if (precioFinal > 120) {
+        ingresosBrutos = 10;
+        precioFinal = precioFinal * ingresosBrutos / 100 + precioFinal;
+
+        alert(`Usted pago ${ingresosBrutos}% de IIBB., siendo ${precioFinal} el impuesto que se pagó`);
     }
 
-    if(cantidadLampara == 3){
-        if(marca == "ArgentinaLuz"){
-            descuento == 15;
-            lamparas = lamparas * 3;
-        }
-        if(marca == "FelipeLamparas"){
-            descuento = 10;
-            lamparas = lamparas * 3;
-        }
-        if(marca != "ArgentinaLuz" || "FelipeLamparas"){
-            descuento = 5;
-            lamparas = lamparas * 3;
-        }
-    }
-    precioFinal = lamparas * descuento /100;
-    /**if(lamparas > 120){
-        ingresosBrutos = 10;
-        mensaje = `Usted pago ${lamparas} de IIBB.”, siendo ${ingresosBrutos} el impuesto que se pagó`;
-    } */
     alert(mensaje);
 }
+//Miguel Villalba Paez

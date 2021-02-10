@@ -7,9 +7,9 @@ function mostrar()
 	"Vamos, la proxima se puede" para notas menores a 4 */
 	let random = Math.floor(Math.random()*10)+1;
 	let mensaje = "";
-	if(random >= 9 && random <=10){
+	if(random <=10 && random >= 9){
 		mensaje = "EXCELENTE";
-	}else if(random >= 4 && random <9){
+	}else if(random <9 && random >= 4){
 		mensaje = "APROBÓ";
 	}else if(random <4){
 		mensaje = "Vamos, la proxima se puede";
@@ -17,3 +17,4 @@ function mostrar()
 	alert(mensaje);
 
 }//FIN DE LA FUNCIÓN
+//Miguel Villalba Paez

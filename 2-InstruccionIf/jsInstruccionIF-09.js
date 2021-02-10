@@ -6,3 +6,4 @@ function mostrar()
 	alert(random);
 
 }//FIN DE LA FUNCIÓN
+//Miguel Villalba Paez

@@ -12,6 +12,6 @@ function mostrar()
 		mensaje = "Es un niñe";
 	}
 	alert(mensaje);
-
+	
 
 }//FIN DE LA FUNCIÓN
