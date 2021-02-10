@@ -60,7 +60,7 @@ function papel()
 	return mostrarResultado();
 }//FIN DE LA FUNCIÓN
 function tijera()
-{ 
+{   
 	let mensaje = "";
 
 	switch(eleccionMaquina){
