@@ -1,13 +1,12 @@
 
-function mostrar()
-{
-	let precioProductoBarbijo_marcaMiguel = 100 ;
+function mostrar() {
+	let precioProductoBarbijo_marcaMiguel = 100;
 	let precioProductoBarbijo_marcaOscar = 125;
 	let precioProductoJabon_marcaArgenchina = 120;
 	let precioProductoJabon_marcaParaguay = 170;
 	let precioProductoAlcohol_marcaAdidas = 200;
 	let precioProductoAlcohol_marcaPuma = 150;
-	let precioProductoAlcoholGel_marcaNike =250;
+	let precioProductoAlcoholGel_marcaNike = 250;
 	let precioProductoAlcoholGel_marcaAxe = 300;
 	let precioProductoPapel_marcaPringles = 150;
 	let precioProductoPapel_marcaPan = 200;
@@ -33,83 +32,273 @@ function mostrar()
 	let cantidadAlcoholGel = 0;
 	let cantidadPapel = 0;
 	let bandera = true;
-	
+
 	alert("Tenomos 5 Productos");
 	//primero mostrar los productos , luego validarlos , 
 
 	confirmadorBarbijo = prompt("quiere llevar barbijos");
-	if(confirmadorBarbijo == "si"){
-		confirmadorBarbijo = prompt(`tenemos barbijos de la marca ${marcaMiguel_Barbijo} y sale ${precioProductoBarbijo_marcaMiguel}, quiere llevarlo? `);
-		
-		if(confirmadorBarbijo === "si" )
-		{
-			cantidadBarbijos = parseInt(prompt(`cuantas catidades quire llevar ?`));
+	if (confirmadorBarbijo == "si") 
+	{
+		confirmadorBarbijo = prompt(`tenemos barbijos de la marca ${marcaMiguel_Barbijo} y cuesta ${precioProductoBarbijo_marcaMiguel}, quiere llevarlo? `);
 
-			if(cantidadBarbijos > 1000 || cantidadBarbijos < 0)
+		if (confirmadorBarbijo === "si") 
+		{
+			cantidadBarbijos = parseInt(prompt(`cuantas catidades quiere llevar ?`));
+
+			if (cantidadBarbijos > 1000 || cantidadBarbijos < 0) 
 			{
-				
-				while(bandera == true)
+
+				while (bandera == true) 
 				{
-					alert(`la cantidad no puede ser ${cantidadBarbijos}, por favor ingrese una cantidad que este entre 1 hasta 1000`);
+					alert(`la cantidad no puede ser ${cantidadBarbijos}, por favor ingrese una cantidad que este entre el 1 y 1000`);
 					cantidadBarbijos = parseInt(prompt(`cuantas catidades quire llevar ?`));
 
-					if(cantidadBarbijos <1000 && cantidadBarbijos >0)
+					if (cantidadBarbijos < 1000 && cantidadBarbijos > 0) 
 					{
 
-						bandera = false ;
+						bandera = false;
 					}
 				}
-				bandera = true ;
+				bandera = true;
 				alert(`usted compro ${cantidadBarbijos} de cantidad`);
-			}else 
+			} else 
 			{
-				if(cantidadBarbijos <=1000 && cantidadBarbijos >0)
+				if (cantidadBarbijos <= 1000 && cantidadBarbijos > 0) 
 				{
 					confirmadorBarbijo = "";
 					alert(`usted compro ${cantidadBarbijos} de cantidad`);
 				}
 			}
-		}else
+		} else 
 		{
-			confirmadorBarbijo = prompt(`tenemos barbijos de la marca ${marcaOscar_Barbijo} y sale ${precioProductoBarbijo_marcaOscar}, quiere llevarlo? `);
-			if(confirmadorBarbijo === "si")
+			confirmadorBarbijo = prompt(`tenemos barbijos de la marca ${marcaOscar_Barbijo} y cuesta ${precioProductoBarbijo_marcaOscar}, quiere llevarlo? `);
+			if (confirmadorBarbijo === "si") 
 			{
-				cantidadBarbijos = parseInt(prompt(`cuantas catidades quire llevar ?`));
+				cantidadBarbijos = parseInt(prompt(`cuantas catidades quiere llevar ?`));
 
-			if(cantidadBarbijos > 1000 || cantidadBarbijos < 0)
-			{
-				
-				while(bandera == true)
+				if (cantidadBarbijos > 1000 || cantidadBarbijos < 0) 
 				{
-					alert(`la cantidad no puede ser ${cantidadBarbijos}, por favor ingrese una cantidad que este entre 1 hasta 1000`);
-					cantidadBarbijos = parseInt(prompt(`cuantas catidades quire llevar ?`));
 
-					if(cantidadBarbijos <1000 && cantidadBarbijos >0)
+					while (bandera == true) 
 					{
+						alert(`la cantidad no puede ser ${cantidadBarbijos}, por favor ingrese una cantidad que este entre el 1 y 1000`);
+						cantidadBarbijos = parseInt(prompt(`cuantas catidades quire llevar ?`));
 
-						bandera = false ;
+						if (cantidadBarbijos < 1000 && cantidadBarbijos > 0) 
+						{
+
+							bandera = false;
+						}
+					}
+					bandera = true;
+					alert(`usted compro ${cantidadBarbijos} de cantidad`);
+				} else 
+				{
+					if (cantidadBarbijos <= 1000 && cantidadBarbijos > 0) 
+					{
+						confirmadorBarbijo = "";
+						alert(`usted compro ${cantidadBarbijos} de cantidad`);
 					}
 				}
-				bandera = true ;
-				alert(`usted compro ${cantidadBarbijos} de cantidad`);
-			}else 
-			{
-				if(cantidadBarbijos <=1000 && cantidadBarbijos >0)
-				{
-					confirmadorBarbijo = "";
-					alert(`usted compro ${cantidadBarbijos} de cantidad`);
-				}
-			}
 
-			}else
+			} else 
 			{
 				alert("no tenemos mas marcas de barbijos");
 			}
-			
+
 		}
 	}
 
+	confirmadorJabon = prompt("Quiere comprar jabon ?");
+	if (confirmadorJabon === "si") 
+	{
+		confirmadorJabon = prompt(`tenemos de la marca ${marcaArgenchina_Jabon} y cuesta ${precioProductoJabon_marcaArgenchina} ,lo quiere llevar ??`);
+		if (confirmadorJabon == "si") 
+		{
+
+			cantidadJabon = parseInt(prompt("Cuantas unidades quiere llevar??"));
+			if (cantidadJabon > 1000 && cantidadJabon <= 0);
+			{
+				while (bandera == true) 
+				{
+					alert(`la cantidad no puede ser ${cantidadJabon}, por favor ingrese una cantidad que este entre el 1 y 1000`);
+					cantidadJabon = parseInt(prompt("Cuantas unidades quiere llevar??"));
+					if (cantidadJabon <= 1000 && cantidadJabon > 0) {
+						bandera = false;
+
+					}
+				}
+				bandera = true;
+				alert(`ustded compro ${cantidadJabon} unidades de jabon marca ${marcaArgenchina_Jabon}`);
+			}
+		} else 
+		{
+			confirmadorJabon = prompt(`o tambien tenemos de la marca ${marcaParaguay_Jabon} y cuesta ${precioProductoJabon_marcaParaguay} quiere llevarla ??`);
+			if (confirmadorJabon == "si") 
+			{
+				cantidadJabon = parseInt(prompt("cuantas unidades quiere llevar ??"));
+				if (cantidadJabon > 1000 || cantidadJabon <= 0) 
+				{
+					while (bandera == true) 
+					{
+						alert(`la cantidad no puede ser ${cantidadJabon}, por favor ingrese una cantidad que este entre el 1 y 1000`)
+						cantidadJabon = parseInt(prompt("cuantas unidades quiere llevar ??"));
+						if (cantidadJabon <= 1000 && cantidadJabon > 0) 
+						{
+							bandera = false;
+						}
+					}
+				}
+				bandera = true;
+				alert(`usted compro ${cantidadJabon} unidades de jabon marca ${marcaParaguay_Jabon}`);
+			}
+		}
+	}
+	confirmadorAlcohol = prompt("Quiere comprar alcohol ??");
+	if(confirmadorAlcohol == "si")
+	{
+		confirmadorAlcohol = prompt(`tenemos la marca ${marcaAdidas_Alcohol} y cuesta ${precioProductoAlcohol_marcaAdidas} la quiere llevar ??`);
+		if(confirmadorAlcohol == "si")
+		{
+			cantidadAlcohol = parseInt(prompt("Cuantas unidades quiere llevar ??"));
+			if(cantidadAlcohol >1000 || cantidadAlcohol <=0)
+			{
+				while(bandera == true)
+				{
+					alert(`La cantidad no puede ser ${cantidadAlcohol} , por favor ingrese una cantidad que este entre el 1 y 1000`);
+					cantidadAlcohol = parseInt(prompt("Cuantas unidades quiere llevar ??"));
+
+					if(cantidadAlcohol <= 1000 && cantidadAlcohol >0)
+					{
+						bandera = false;
+					}
+				}
+			}
+			bandera = true ;
+			alert(`usted compro ${cantidadAlcohol} cantidad de alcohol de la marca ${marcaAdidas_Alcohol}`);
+		}else 
+		{
+			confirmadorAlcohol = prompt(`o tambien tenemos la marca ${marcaPuma_Alcohol} y cuesta ${precioProductoAlcohol_marcaPuma} la quiere llevar ??`);
+			if(confirmadorAlcohol == "si")
+			{
+				cantidadAlcohol = parseInt(prompt("cuantas unidades quiere llevar ??"));
 	
+				if(cantidadAlcohol> 1000 || cantidadAlcohol <=0)
+				{
+					while(bandera == true)
+					{
+						alert(`La cantidad no puede ser ${cantidadAlcohol} , por favor ingrese una cantidad que este entre 1 y 1000`);
+						cantidadAlcohol = parseInt(prompt("Cuantas unidades quiere llevar ??"));
+	
+						if(cantidadAlcohol <=1000 && cantidadAlcohol >0)
+						{
+							bandera = false ;
+						}
+					}
+				}
+				bandera = true ;
+				alert(`Usted compro ${cantidadAlcohol} unidades de alcohol de la marca ${marcaPuma_Alcohol}`);
+			}
+		}
+
+	}
+	confirmadorAlcoholGel = prompt("quiere llevar alcohol en gel ??")
+	if(confirmadorAlcoholGel == "si")
+	{
+		confirmadorAlcoholGel = prompt(`tenemos la marca ${marcaNike_AlcoholGel} y cuesta ${precioProductoAlcoholGel_marcaNike}, la quiere llevar ??`);
+		if(confirmadorAlcoholGel == "si")
+		{
+			cantidadAlcoholGel = parseInt(prompt("Cuantas unidades quiere llevar ??"));
+			if(cantidadAlcoholGel >1000 || cantidadAlcoholGel <0)
+			{
+				while(bandera == true )
+				{
+					alert(`La cantidad no puede ser ${cantidadAlcoholGel} , por favor ingrese una cantidad que este entre 1 y 1000`);
+					cantidadAlcoholGel = parseInt(prompt("Cuantas unidades quiere llevar ??"));
+					if(cantidadAlcoholGel <=1000 && cantidadAlcoholGel >0)
+					{
+						bandera = false ;
+					}
+				}
+			}
+			bandera = true ;
+			alert(`Usted compro ${cantidadAlcoholGel} unidades de alcohol de la marca ${marcaNike_AlcoholGel}`);
+		}else
+		{
+			confirmadorAlcoholGel = prompt(`o tambien tenemos la marca ${marcaAxe_AlcoholGel} y cuesta ${precioProductoAlcoholGel_marcaAxe} , la quiere llevar ??`);
+			if(confirmadorAlcoholGel == "si")
+			{
+				cantidadAlcoholGel = parseInt(prompt("Cuantas unidades quiere llevar ??"));
+
+				if(cantidadAlcoholGel >1000 || cantidadAlcoholGel <0)
+				{
+					while(bandera == true)
+					{
+						alert(`La cantidad no puede ser ${cantidadAlcoholGel} , por favor ingrese una cantidad que este entre 1 y 1000`);
+						cantidadAlcoholGel = parseInt(prompt("Cuantas unidades quiere llevar ??"));
+						if(cantidadAlcoholGel <1000 && cantidadAlcoholGel >0)
+						{
+							bandera = false;
+						}
+					}
+				}
+				bandera = true ;
+				alert(`Usted compro ${cantidadAlcoholGel} unidades de alcohol de la marca ${marcaAxe_AlcoholGel}`)
+			}
+		}
+		
+	}
+	confirmadorPapel = prompt("Quiere llevar papel??");
+	if(confirmadorPapel == "si")
+	{
+		confirmadorPapel = prompt(`Tenemos la marca ${marcaPringles_Papel} y cuesta ${precioProductoPapel_marcaPringles} , la quiere llevar ??`);
+
+		if(confirmadorPapel == "si")
+		{
+			cantidadPapel = parseInt(prompt("cuantas unidades quiere llevar ?"));
+			if(cantidadPapel >1000 || cantidadPapel <0)
+			{
+				while(bandera == true)
+				{
+					alert(`La cantidad no puede ser ${cantidadPapel} , por favor ingrese una cantidad que este entre 1 y 1000`);
+					cantidadPapel = parseInt(prompt("cuantas cantidades quiere llevar ?"));
+					if(cantidadPapel <=1000 && cantidadPapel >0)
+					{
+						bandera = false ;
+					}
+				}
+			}
+			bandera = true ;
+			alert(`usted compro ${cantidadPapel} unidades de la marca ${marcaPringles_Papel}`);
+		}else
+		{
+			confirmadorPapel = prompt(`o tambien tenemos la marca ${marcaPan_Papel} y cuesta ${precioProductoPapel_marcaPan} , la quiere llevar ??`);
+
+			if(confirmadorPapel == "si")
+			{
+				cantidadPapel = parseInt(prompt("Cuantas unidades quiere llevar ??"));
+
+				if(cantidadPapel >1000 || cantidadPapel <0)
+				{
+					while(bandera = true)
+					{
+						alert(`La cantidad de unidades no puede ser ${cantidadPapel} , por favor ingrese una cantidad que este entre 1 y 1000`);
+						cantidadPapel = parseInt(prompt("Cuantas unidades quiere llevar ??"));
+						if(cantidadPapel <=1000 && cantidadPapel >0)
+						{
+							bandera = true;							
+						}
+					}
+				}
+				bandera = true;
+				alert(`Usted compro ${cantidadPapel} unidades de la marca ${marcaPan_Papel}`);
+			}
+		}
+	}
+	
+	
+
+
 
 
 
