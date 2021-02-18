@@ -1,6 +1,55 @@
 
 function mostrar() {
-	let precioProductoBarbijo_marcaMiguel = 100;
+	
+	let productoUno = prompt("Ingrese el nombre del producto 1");
+	let productoDos = prompt("Ingrese el nombre del producto 2");
+	let productoTres = prompt("Ingrese el nombre del producto 3");
+	let productoCuatro = prompt("Ingrese el nombre del producto 4");
+	let productoCinco = prompt("Ingrese el nombre del producto 5");
+//	let precioProductoUno = parseInt(prompt(`Ingrese el precio de producto ${productoUno}`));
+//	let precioProductoDos = parseInt(prompt(`Ingrese el precio de producto ${productoDos}`));
+//	let precioProductoTres = parseInt(prompt(`Ingrese el precio de producto ${productoTres}`));
+//	let precioProductoCuatro = parseInt(prompt(`Ingrese el precio de producto ${productoCuatro}`));
+//	let precioProductoCinco = parseInt(prompt(`Ingrese el precio de producto ${productoCinco}`));
+	
+	let cantidadMarcas = parseInt(prompt("cuantas marcas quiere para el producto "+productoUno));
+	let marcaUno ="";
+	for (i = 0; i < cantidadMarcas ; i ++)
+	{
+		marcaUno = prompt("nombre de la marca "+i);
+	}
+	
+
+	alert("Ingrese los nombre de los productos y sus precios ");
+
+
+
+	
+
+
+
+	 
+
+	
+
+
+
+
+
+
+}
+/**Debemos realizar la carga de 5(cinco) productos de prevención de contagio,
+de cada una debo obtener los siguientes datos:
+el tipo (validar "barbijo" , "jabón" o "alcohol") ,
+el precio (validar entre 100 y 300),
+la cantidad de unidades (no puede ser 0 o negativo y no debe superar las 1000 unidades),
+la Marca y el fabricante.
+Se debe Informar al usuario lo siguiente:
+a) Del más barato de los alcohol, la cantidad de unidades y el fabricante
+b) Del tipo con mas unidades, el promedio por compra
+c) Cuántas unidades de jabones hay en total */
+
+/**let precioProductoBarbijo_marcaMiguel = 100;
 	let precioProductoBarbijo_marcaOscar = 125;
 	let precioProductoJabon_marcaArgenchina = 120;
 	let precioProductoJabon_marcaParaguay = 170;
@@ -294,23 +343,4 @@ function mostrar() {
 				alert(`Usted compro ${cantidadPapel} unidades de la marca ${marcaPan_Papel}`);
 			}
 		}
-	}
-	
-	
-
-
-
-
-
-
-}
-/**Debemos realizar la carga de 5(cinco) productos de prevención de contagio,
-de cada una debo obtener los siguientes datos:
-el tipo (validar "barbijo" , "jabón" o "alcohol") ,
-el precio (validar entre 100 y 300),
-la cantidad de unidades (no puede ser 0 o negativo y no debe superar las 1000 unidades),
-la Marca y el fabricante.
-Se debe Informar al usuario lo siguiente:
-a) Del más barato de los alcohol, la cantidad de unidades y el fabricante
-b) Del tipo con mas unidades, el promedio por compra
-c) Cuántas unidades de jabones hay en total */
+	} */
