@@ -18,41 +18,123 @@ function CalcularPrecio() {
     let precioFinal = 0;
     let ingresosBrutos = 0;
 
-    if (cantidadLampara >= 6) {
+    switch(cantidadLampara)
+    {
+        case 5 :
+            switch(marca)
+            {
+                case "ArgentinaLuz":
+                    descuento = 40 ;
+                    break ;
+                default :
+                    descuento = 30;     
+            }
+        break ;
+        case 4 :
+            switch(marca)
+            {
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    descuento = 25 ;
+                    break;
+                default :
+                    descuento = 20;
+            }
+        break ;
+        case 3 :
+            switch(marca)
+            {
+                case "ArgentinaLuz":
+                    descuento = 15 ;
+                    break;
+                case "FelipeLamparas":
+                    descuento = 10;
+                    break;
+                default :
+                    descuento = 5;
+            }
+        break;
+        case 2 :
+        case 1 :
+            descuento = 0;
+            break;
+        default :
+            descuento = 50 ;
+    }
+
+    precioFinal = cantidadLampara * lamparas ;
+    precioFinal = precioFinal * descuento / 100 ;
+    
+
+
+    alert(mensaje);
+}
+//Miguel Villalba Paez
+/**    if (cantidadLampara >= 6) 
+    {
         descuento = 50;
 
-    }
-    if (cantidadLampara == 5) {
-        if (marca == "ArgentinaLuz") {
-            descuento = 40;
-
-        } else if (marca != "ArgentinaLuz") {
-            descuento = 30;
-
-        }
-    }
-    if (cantidadLampara == 4) {
-        if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
-            descuento = 25;
-
-        } else if (marca != "ArgentinaLuz" || marca != "FelipeLamparas") {
-            descuento = 20;
-
-        }
-    }
-    if (cantidadLampara == 3) {
+    }else
+    {
+        if (cantidadLampara == 5) 
+        {
+            if (marca == "ArgentinaLuz") 
+            {
+                descuento = 40;
+    
+            } else 
+            {
+                if (marca != "ArgentinaLuz")
+                 {
+                    descuento = 30;
         
-        if (marca == "ArgentinaLuz") {
-            descuento = 15;
-
-        } else if (marca == "FelipeLamparas") {
-            descuento = 10;
-
-        } else if (marca != "ArgentinaLuz" || marca != "FelipeLamparas") {
-            descuento = 5;
-
+                }
+            } 
+        }else
+        {
+            if (cantidadLampara == 4) 
+            {
+                if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") 
+                {
+                    descuento = 25;
+        
+                } else 
+                {
+                    if (marca != "ArgentinaLuz" || marca != "FelipeLamparas") 
+                    {
+                        descuento = 20;
+                    }
+                } 
+            }else
+            {
+                if (cantidadLampara == 3) 
+                {
+        
+                    if (marca == "ArgentinaLuz") 
+                    {
+                        descuento = 15;
+            
+                    } else 
+                    {
+                        if (marca == "FelipeLamparas") 
+                        {
+                            descuento = 10;
+                
+                        } else 
+                        {
+                            if (marca != "ArgentinaLuz" || marca != "FelipeLamparas") 
+                            {
+                                descuento = 5;     
+                            }
+                        }  
+            
+                    }
+                }
+            }
         }
     }
+
+    
     document.getElementById("txtIdprecioDescuento").value = descuento;
     lamparas = lamparas * cantidadLampara;
     precioFinal = lamparas * descuento / 100;
@@ -65,7 +147,4 @@ function CalcularPrecio() {
 
         alert(`Usted pago ${ingresosBrutos}% de IIBB., siendo ${precioFinal} el impuesto que se pagó`);
     }
-
-    alert(mensaje);
-}
-//Miguel Villalba Paez
+ */
