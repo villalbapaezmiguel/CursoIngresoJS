@@ -1,26 +1,77 @@
 
 function mostrar() {
 	
-	let productoUno = prompt("Ingrese el nombre del producto 1");
-	let productoDos = prompt("Ingrese el nombre del producto 2");
-	let productoTres = prompt("Ingrese el nombre del producto 3");
-	let productoCuatro = prompt("Ingrese el nombre del producto 4");
-	let productoCinco = prompt("Ingrese el nombre del producto 5");
-//	let precioProductoUno = parseInt(prompt(`Ingrese el precio de producto ${productoUno}`));
-//	let precioProductoDos = parseInt(prompt(`Ingrese el precio de producto ${productoDos}`));
-//	let precioProductoTres = parseInt(prompt(`Ingrese el precio de producto ${productoTres}`));
-//	let precioProductoCuatro = parseInt(prompt(`Ingrese el precio de producto ${productoCuatro}`));
-//	let precioProductoCinco = parseInt(prompt(`Ingrese el precio de producto ${productoCinco}`));
+	let productoUno;
+	let productoDos ;
+	let productoTres ;
+	let productoCuatro ;
+	let productoCinco ;
+	let marcaUno_ProductoUno = "";
+	let marcaDos_ProductoUno = "";
+	let marcaUno_ProductoDos = "";
+	let marcaDos_ProductoDos = "";
+	let marcaUno_ProductoTres = "";
+	let marcaDos_ProductoTres = "";
+	let marcaUno_ProductoCuatro = "";
+	let marcaDos_ProductoCuatro = "";
+	let marcaUno_ProductoCinco = "";
+	let marcaDos_ProductoCinco = "";
+	let precioProductoUno_marcaUno = 0;
+	let precioProductoUno_marcaDos = 0; 
+	let precioProductoDos_marcaUno = 0;
+	let precioProductoDos_marcaDos = 0;
+	let precioProductoTres_marcaUno = 0;
+	let precioProductoTres_marcaDos = 0;
+	let precioProductoCuatro_marcaUno = 0;
+	let precioProductoCuatro_marcaDos = 0;
+	let precioProductoCinco_marcaUno = 0;
+	let precioProductoCinco_marcaDos = 0;
+	let cantidadProductoUno = 0;
+	let cantidadProductoDos = 0;
+	let cantidadProductoUnoTres = 0;
+	let cantidadProductoUnoCuatro = 0;
+	let cantidadProductoUnoCinco = 0;
+	let confirmadorProductoUno = "";
+	let confirmadorProductoDos = "";
+	let confirmadorProductoTres = "";
+	let confirmadorProductoCuatro = "";
+	let confirmadorProductoCinco = "";
+
+	//nombres de los productos
+	productoUno = prompt("Ingrese el nombre del producto 1");
+	productoDos = prompt("Ingrese el nombre del producto 2");
+	productoTres = prompt("Ingrese el nombre del producto 3");
+	productoCuatro = prompt("Ingrese el nombre del producto 4");
+	productoCinco = prompt("Ingrese el nombre del producto 5");
+	//nombres de las marcas 
+	marcaUno_ProductoUno = prompt(`Ingrese la marca del producto ${productoUno} `);
+	marcaDos_ProductoUno = prompt(`Ingrese la marca del producto ${productoUno} `);
+	marcaUno_ProductoDos = prompt(`Ingrese la marca del producto ${productoDos} `);
+	marcaDos_ProductoDos = prompt(`Ingrese la marca del producto ${productoDos} `);
+	marcaUno_ProductoTres = prompt(`Ingrese la marca del producto ${productoTres} `);
+	marcaDos_ProductoTres = prompt(`Ingrese la marca del producto ${productoTres} `);
+	marcaUno_ProductoCuatro = prompt(`Ingrese la marca del producto ${productoCuatro} `);
+	marcaDos_ProductoCuatro = prompt(`Ingrese la marca del producto ${productoCuatro} `);
+	marcaUno_ProductoCinco = prompt(`Ingrese la marca del producto ${productoCinco} `);
+	marcaDos_ProductoCinco = prompt(`Ingrese la marca del producto ${productoCinco} `);
 	
-	let cantidadMarcas = parseInt(prompt("cuantas marcas quiere para el producto "+productoUno));
-	let marcaUno ="";
-	for (i = 0; i < cantidadMarcas ; i ++)
-	{
-		marcaUno = prompt("nombre de la marca "+i);
-	}
+	//precios de las marcas 
+	precioProductoUno_marcaUno = parseInt(prompt(`Ingrese el precio de producto ${productoUno}`));
+	precioProductoUno_marcaDos = parseInt(prompt(`Ingrese el precio de producto ${productoUno}`));
+	precioProductoDos_marcaUno = parseInt(prompt(`Ingrese el precio de producto ${productoDos}`));
+	precioProductoDos_marcaDos = parseInt(prompt(`Ingrese el precio de producto ${productoDos}`));
+	precioProductoTres_marcaUno = parseInt(prompt(`Ingrese el precio de producto ${productoTres}`));
+	precioProductoTres_marcaDos = parseInt(prompt(`Ingrese el precio de producto ${productoTres}`));
+	precioProductoCuatro_marcaUno = parseInt(prompt(`Ingrese el precio de producto ${productoCuatro}`));
+	precioProductoCuatro_marcaDos = parseInt(prompt(`Ingrese el precio de producto ${productoCuatro}`));
+	precioProductoCinco_marcaUno = parseInt(prompt(`Ingrese el precio de producto ${productoCinco}`));
+	precioProductoCinco_marcaDos = parseInt(prompt(`Ingrese el precio de producto ${productoCinco}`));
+	
+	confirmadorProductoUno = prompt(`Quiere comprar ${productoUno} ??`);
 	
 
-	alert("Ingrese los nombre de los productos y sus precios ");
+
+	
 
 
 
