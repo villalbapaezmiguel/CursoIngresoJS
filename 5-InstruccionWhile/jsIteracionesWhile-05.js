@@ -7,6 +7,8 @@ function mostrar()
 	let sexoIngresado ;
 
 	sexoIngresado = prompt("ingrese f o m");
+	sexoIngresado = sexoIngresado.toLocaleLowerCase(); // combierte a miniscula caulquier string
+								//toUppercase() combierte a mayuscula ;
 
 	while(sexoIngresado != "f" && sexoIngresado != "m")
 	{

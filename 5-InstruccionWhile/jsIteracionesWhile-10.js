@@ -36,10 +36,6 @@ function mostrar()
 			cantidadPositivo ++;
 			promedioPositivo = sumaPositivos/cantidadPositivo;
 			
-			if(numeroIngresado %2 == 0)
-			{
-				cantidadPar ++;
-			}
 		}else
 		{
 			if(numeroIngresado < 0 )
@@ -48,10 +44,6 @@ function mostrar()
 				cantidadNegativo ++;
 				promedioNegativo = sumaNegativos / cantidadNegativo;
 
-				if(numeroIngresado %2 == 0)
-				{
-					cantidadPar ++;
-				}
 			}else
 			{
 				if(numeroIngresado == 0)
@@ -59,6 +51,10 @@ function mostrar()
 					cantidadCeros ++;
 				}
 			}
+		}
+		if(numeroIngresado %2 == 0)
+		{
+			cantidadPar++;
 		}
 
 		respuesta=prompt("desea continuar?");
@@ -75,3 +71,4 @@ function mostrar()
 	8-Promedios de negativos es : ${promedioNegativo}</br>
 	9-Diferencia entre positivos y negativos : (${sumaPositivos} - ${sumaNegativos}).`);
 }//FIN DE LA FUNCIÓN
+// todos los tps de whille y si queres bucles

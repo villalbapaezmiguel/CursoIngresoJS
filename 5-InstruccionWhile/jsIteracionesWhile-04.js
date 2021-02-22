@@ -6,7 +6,12 @@ function mostrar()
 	var numeroIngresado;
 	numeroIngresado = prompt("ingrese un número entre 0 y 9.");
 
-	while(numeroIngresado < 10 != numeroIngresado > 0)
+	if(isNaN(numeroIngresado))//si mo es un numero entra
+	{
+		alert("ingre un numero");
+	}
+
+	while( numeroIngresado < 10 != numeroIngresado > 0)
 	{
 		numeroIngresado = prompt("ingrese un número entre 0 y 9.");
 
