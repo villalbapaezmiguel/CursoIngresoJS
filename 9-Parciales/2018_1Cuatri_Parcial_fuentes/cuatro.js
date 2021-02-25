@@ -16,16 +16,18 @@ function mostrar()
         
         resultado = `${numUno}${numDos}` ;
         alert(`${resultado}`);
-    }else{
+
+    }else
+    {
 
         if(numUno > numDos)
         {
             resultado = numUno - numDos ;
-            mensaje = `${resultado}`;
+            mensaje = `La resta da ${resultado}`;
         }else
         {
             resultado = numUno + numDos ;
-            mensaje = `${resultado}`;
+            mensaje = `La suma da ${resultado}`;
         }
         if( resultado > 10)
         {
@@ -34,7 +36,11 @@ function mostrar()
         alert(mensaje);
     }
 
-
+    if(mensaje = "")
+    {
+        
+        alert(mensaje);
+    }
 }
 /**Bienvenidos (IF).
 Pedir dos números y mostrar el resultado:
