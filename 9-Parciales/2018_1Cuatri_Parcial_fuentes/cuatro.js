@@ -15,7 +15,7 @@ function mostrar()
     {
         
         resultado = `${numUno}${numDos}` ;
-        mensaje = resultado ;
+        alert(`${resultado}`);
     }else{
 
         if(numUno > numDos)
@@ -27,14 +27,14 @@ function mostrar()
             resultado = numUno + numDos ;
             mensaje = `${resultado}`;
         }
+        if( resultado > 10)
+        {
+            mensaje = `la suma es ${resultado} y supero el 10`
+        }
+        alert(mensaje);
     }
 
-    if( typeof"number" && resultado > 10)
-    {
-        mensaje = `la suma es ${resultado} y supero el 10`
-    }
 
-    alert(mensaje);
 }
 /**Bienvenidos (IF).
 Pedir dos números y mostrar el resultado:
