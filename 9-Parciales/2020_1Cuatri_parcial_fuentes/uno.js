@@ -1,90 +1,124 @@
+/*
+repetir 5 veces 
+	pedir tipo validar (barbijo-jabon-alcohol)
+	pedir precio validar (100 y 300 )
+	pedir catidad y validar (1-1000)
+	pedir marca 
+	pedir fabticante 
+
+	preguntar sie el tipo es alcohol
+		preguntar si el alcochol es el mas barato
+		(x)	guardar cantidad de unidades del mas barato 
+		(x)	guardar el fabricante del mas barato 
+			guardar el precio del mas barato 
+		fin si
+	fin si 
+
+
+	preguntar 
+		case	si es jabon
+			contar vaces que se compro jabon
+			acumulo las cantidades  
+		
+		case	si es barbijo 
+			contar vaces que se compro jabon
+			acumulo las cantidades  
+
+		case	si es alcohol 
+			contar vaces que se compro jabon
+			acumulo las cantidades  
+	fin 
+
+termino de repetir
+
+preguntar si la cantidad de jabones es mayor a la cantidad de barbijos y ademas a la cantiadd de 
+alcoholes 
+
+	calculo promedio para jabones 
+		sino la cantidad de babijos es mayor 
+			calculo promedio para barbijos 
+				sino 
+					calculo el promedio de alcoholes 
+fin preguntar*/
 
 function mostrar() {
 	
-	let productoUno;
-	let productoDos ;
-	let productoTres ;
-	let productoCuatro ;
-	let productoCinco ;
-	let marcaUno_ProductoUno = "";
-	let marcaDos_ProductoUno = "";
-	let marcaUno_ProductoDos = "";
-	let marcaDos_ProductoDos = "";
-	let marcaUno_ProductoTres = "";
-	let marcaDos_ProductoTres = "";
-	let marcaUno_ProductoCuatro = "";
-	let marcaDos_ProductoCuatro = "";
-	let marcaUno_ProductoCinco = "";
-	let marcaDos_ProductoCinco = "";
-	let precioProductoUno_marcaUno = 0;
-	let precioProductoUno_marcaDos = 0; 
-	let precioProductoDos_marcaUno = 0;
-	let precioProductoDos_marcaDos = 0;
-	let precioProductoTres_marcaUno = 0;
-	let precioProductoTres_marcaDos = 0;
-	let precioProductoCuatro_marcaUno = 0;
-	let precioProductoCuatro_marcaDos = 0;
-	let precioProductoCinco_marcaUno = 0;
-	let precioProductoCinco_marcaDos = 0;
-	let cantidadProductoUno = 0;
-	let cantidadProductoDos = 0;
-	let cantidadProductoUnoTres = 0;
-	let cantidadProductoUnoCuatro = 0;
-	let cantidadProductoUnoCinco = 0;
-	let confirmadorProductoUno = "";
-	let confirmadorProductoDos = "";
-	let confirmadorProductoTres = "";
-	let confirmadorProductoCuatro = "";
-	let confirmadorProductoCinco = "";
+	let cantidad_barbijo ; 
+	let cantidad_jabon ;
+	let cantidad_alcohol ;
+	let contador_barbijo = 0; 
+	let contador_jabon = 0;
+	let contador_alcohol = 0;
 
-	//nombres de los productos
-	productoUno = prompt("Ingrese el nombre del producto 1");
-	productoDos = prompt("Ingrese el nombre del producto 2");
-	productoTres = prompt("Ingrese el nombre del producto 3");
-	productoCuatro = prompt("Ingrese el nombre del producto 4");
-	productoCinco = prompt("Ingrese el nombre del producto 5");
-	//nombres de las marcas 
-	marcaUno_ProductoUno = prompt(`Ingrese la marca del producto ${productoUno} `);
-	marcaDos_ProductoUno = prompt(`Ingrese la marca del producto ${productoUno} `);
-	marcaUno_ProductoDos = prompt(`Ingrese la marca del producto ${productoDos} `);
-	marcaDos_ProductoDos = prompt(`Ingrese la marca del producto ${productoDos} `);
-	marcaUno_ProductoTres = prompt(`Ingrese la marca del producto ${productoTres} `);
-	marcaDos_ProductoTres = prompt(`Ingrese la marca del producto ${productoTres} `);
-	marcaUno_ProductoCuatro = prompt(`Ingrese la marca del producto ${productoCuatro} `);
-	marcaDos_ProductoCuatro = prompt(`Ingrese la marca del producto ${productoCuatro} `);
-	marcaUno_ProductoCinco = prompt(`Ingrese la marca del producto ${productoCinco} `);
-	marcaDos_ProductoCinco = prompt(`Ingrese la marca del producto ${productoCinco} `);
-	
-	//precios de las marcas 
-	precioProductoUno_marcaUno = parseInt(prompt(`Ingrese el precio de producto ${productoUno}`));
-	precioProductoUno_marcaDos = parseInt(prompt(`Ingrese el precio de producto ${productoUno}`));
-	precioProductoDos_marcaUno = parseInt(prompt(`Ingrese el precio de producto ${productoDos}`));
-	precioProductoDos_marcaDos = parseInt(prompt(`Ingrese el precio de producto ${productoDos}`));
-	precioProductoTres_marcaUno = parseInt(prompt(`Ingrese el precio de producto ${productoTres}`));
-	precioProductoTres_marcaDos = parseInt(prompt(`Ingrese el precio de producto ${productoTres}`));
-	precioProductoCuatro_marcaUno = parseInt(prompt(`Ingrese el precio de producto ${productoCuatro}`));
-	precioProductoCuatro_marcaDos = parseInt(prompt(`Ingrese el precio de producto ${productoCuatro}`));
-	precioProductoCinco_marcaUno = parseInt(prompt(`Ingrese el precio de producto ${productoCinco}`));
-	precioProductoCinco_marcaDos = parseInt(prompt(`Ingrese el precio de producto ${productoCinco}`));
-	
-	confirmadorProductoUno = prompt(`Quiere comprar ${productoUno} ??`);
-	
+	let precio_alcoholBarato = 0;
+	let fabricante_alcoholBarato ;
+	let cantidad_alcoholBarato = 0;
+	let fabricante ;
+	let marca ;
+	let precio ;
+	let cantidad ;
+	let tipo ;
+	let contador = 0 ;
+	let bandera_alcohol = true ;
+
+while(contador < 5)
+{
+	tipo = prompt("Ingrese tipo de producto (barbijo , alcohol  o jabon)");
+	while(tipo != "barbijo" &&  tipo != "alcohol" && tipo != "jabon" )
+	{
+		tipo = prompt("ERROR , ingrese tipo (barbijo , alcohol  o jabon)");
+	}
+
+	precio  = prompt("Ingrese precio entre 100 y 300");
+	precio = parseInt(precio);
+	while(precio < 100 || precio > 300)
+	{
+		precio  = prompt("ERROR ,Ingrese precio entre 100 y 300");
+		precio = parseInt(precio);
+	}
+
+	cantidad = prompt ("Ingre la cantidad que quiere llevar ");
+	cantidad = parseInt(cantidad);
+	while (cantidad < 1 || cantidad > 1000)
+	{
+		cantidad = prompt ("ERROR ,Ingre la cantidad que quiere llevar entre 1 y 1000");
+		cantidad = parseInt(cantidad);
+		
+	}
+	marca = prompt("Ingrese marca");
+	fabricante = prompt("Ingrese fabricante ");
 
 
-	
+	switch(tipo)
+	{
+		case "barbijo":
+			cantidad_barbijo += cantidad ;
+			contador_barbijo ++;
+			break;
+		case "alcohol":
+			cantidad_alcohol += cantidad ;
+			contador_alcohol ++;
 
+			if(bandera_alcohol == true  || precio_alcoholBarato > precio)//A
+			{
+				precio_alcoholBarato = precio ;
+				cantidad_alcoholBarato = cantidad ;
+				fabricante_alcoholBarato = fabricante ;
+				bandera_alcohol = false ;
+			}
+			break;
+		case "jabon":
+			cantidad_jabon += cantidad ;
+			contador_jabon ++;
+			break;
 
+	}
 
-	
+	contador++;
+}
 
-
-
-	 
 
 	
-
-
-
 
 
 
