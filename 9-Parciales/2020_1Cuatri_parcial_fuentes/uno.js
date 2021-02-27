@@ -1,51 +1,10 @@
-/*
-repetir 5 veces 
-	pedir tipo validar (barbijo-jabon-alcohol)
-	pedir precio validar (100 y 300 )
-	pedir catidad y validar (1-1000)
-	pedir marca 
-	pedir fabticante 
 
-	preguntar sie el tipo es alcohol
-		preguntar si el alcochol es el mas barato
-		(x)	guardar cantidad de unidades del mas barato 
-		(x)	guardar el fabricante del mas barato 
-			guardar el precio del mas barato 
-		fin si
-	fin si 
-
-
-	preguntar 
-		case	si es jabon
-			contar vaces que se compro jabon
-			acumulo las cantidades  
-		
-		case	si es barbijo 
-			contar vaces que se compro jabon
-			acumulo las cantidades  
-
-		case	si es alcohol 
-			contar vaces que se compro jabon
-			acumulo las cantidades  
-	fin 
-
-termino de repetir
-
-preguntar si la cantidad de jabones es mayor a la cantidad de barbijos y ademas a la cantiadd de 
-alcoholes 
-
-	calculo promedio para jabones 
-		sino la cantidad de babijos es mayor 
-			calculo promedio para barbijos 
-				sino 
-					calculo el promedio de alcoholes 
-fin preguntar*/
 
 function mostrar() {
 	
-	let cantidad_barbijo ; 
-	let cantidad_jabon ;
-	let cantidad_alcohol ;
+	let acumulador_barbijo =0; 
+	let acumulador_jabon = 0;
+	let acumulador_alcohol =0;
 	let contador_barbijo = 0; 
 	let contador_jabon = 0;
 	let contador_alcohol = 0;
@@ -54,70 +13,102 @@ function mostrar() {
 	let fabricante_alcoholBarato ;
 	let cantidad_alcoholBarato = 0;
 	let fabricante ;
-	let marca ;
+	let marca = "";
 	let precio ;
 	let cantidad ;
 	let tipo ;
 	let contador = 0 ;
 	let bandera_alcohol = true ;
+	let mayorUnidades = 0;
+	let mayorTipo = "";
+	let promedioCompra = 0;
+	let mensaje = "";
 
-while(contador < 5)
-{
-	tipo = prompt("Ingrese tipo de producto (barbijo , alcohol  o jabon)");
-	while(tipo != "barbijo" &&  tipo != "alcohol" && tipo != "jabon" )
+	while(contador < 5)
 	{
-		tipo = prompt("ERROR , ingrese tipo (barbijo , alcohol  o jabon)");
-	}
+		tipo = prompt("Ingrese tipo de producto (barbijo , alcohol  o jabon)");
+		while(tipo != "barbijo" &&  tipo != "alcohol" && tipo != "jabon" )
+		{
+			tipo = prompt("ERROR , ingrese tipo (barbijo , alcohol  o jabon)");
+		}
 
-	precio  = prompt("Ingrese precio entre 100 y 300");
-	precio = parseInt(precio);
-	while(precio < 100 || precio > 300)
-	{
-		precio  = prompt("ERROR ,Ingrese precio entre 100 y 300");
+		precio  = prompt("Ingrese precio entre 100 y 300");
 		precio = parseInt(precio);
-	}
+		while(precio < 100 || precio > 300)
+		{
+			precio  = prompt("ERROR ,Ingrese precio entre 100 y 300");
+			precio = parseInt(precio);
+		}
 
-	cantidad = prompt ("Ingre la cantidad que quiere llevar ");
-	cantidad = parseInt(cantidad);
-	while (cantidad < 1 || cantidad > 1000)
-	{
-		cantidad = prompt ("ERROR ,Ingre la cantidad que quiere llevar entre 1 y 1000");
+		cantidad = prompt ("Ingre la cantidad que quiere llevar ");
 		cantidad = parseInt(cantidad);
-		
+		while (cantidad < 1 || cantidad > 1000)
+		{
+			cantidad = prompt ("ERROR ,Ingre la cantidad que quiere llevar entre 1 y 1000");
+			cantidad = parseInt(cantidad);
+			
+		}
+		marca = prompt("Ingrese marca");
+		fabricante = prompt("Ingrese fabricante ");
+
+
+		switch(tipo)
+		{
+			case "barbijo":
+				acumulador_barbijo += cantidad ;
+				contador_barbijo ++;
+				break;
+			case "alcohol":
+				acumulador_alcohol += cantidad ;
+				contador_alcohol ++;
+
+				if(bandera_alcohol == true  || precio_alcoholBarato > precio)//A
+				{
+					precio_alcoholBarato = precio ;
+					cantidad_alcoholBarato = cantidad ;
+					fabricante_alcoholBarato = fabricante ;
+					bandera_alcohol = false ;
+				}
+				break;
+			case "jabon":
+				acumulador_jabon += cantidad ;//c
+				contador_jabon ++;
+				break;
+			default :
+		}
+
+		contador++;
 	}
-	marca = prompt("Ingrese marca");
-	fabricante = prompt("Ingrese fabricante ");
-
-
-	switch(tipo)
+	//b
+	if(acumulador_alcohol > acumulador_barbijo && acumulador_alcohol > acumulador_jabon)
 	{
-		case "barbijo":
-			cantidad_barbijo += cantidad ;
-			contador_barbijo ++;
-			break;
-		case "alcohol":
-			cantidad_alcohol += cantidad ;
-			contador_alcohol ++;
-
-			if(bandera_alcohol == true  || precio_alcoholBarato > precio)//A
+		mayorTipo = "alcohol";
+		promedioCompra = acumulador_alcohol/ contador_alcohol ;
+		mayorUnidades = acumulador_alcohol ;
+	}else
+	{
+		if(acumulador_barbijo > acumulador_alcohol && acumulador_barbijo > acumulador_jabon)
+		{
+			mayorTipo = "barbijo";
+			promedioCompra = acumulador_barbijo / contador_barbijo ;
+			mayorUnidades = acumulador_barbijo;
+		}else
+		{
+			if(acumulador_jabon > acumulador_alcohol && acumulador_jabon > acumulador_barbijo)
 			{
-				precio_alcoholBarato = precio ;
-				cantidad_alcoholBarato = cantidad ;
-				fabricante_alcoholBarato = fabricante ;
-				bandera_alcohol = false ;
+				mayorTipo = "jabon";
+				promedioCompra = acumulador_jabon / contador_jabon;
+				mayorUnidades = acumulador_jabon ; 
 			}
-			break;
-		case "jabon":
-			cantidad_jabon += cantidad ;
-			contador_jabon ++;
-			break;
-
+		}
 	}
 
-	contador++;
-}
+	mensaje = `
+	A- Del más barato de los alcohol, la cantidad de unidades es ${cantidad_alcoholBarato} y el fabricante es ${fabricante_alcoholBarato}
+	B- Del tipo con mas unidades es ${mayorTipo} y el promedio por compra es ${promedioCompra} 
+	C-La cantidad de jabones en total son ${acumulador_jabon}` ;
 
-
+	alert(mensaje)
 	
 
 
@@ -429,3 +420,46 @@ c) Cuántas unidades de jabones hay en total */
 			}
 		}
 	} */
+
+	/*
+repetir 5 veces 
+	pedir tipo validar (barbijo-jabon-alcohol)
+	pedir precio validar (100 y 300 )
+	pedir catidad y validar (1-1000)
+	pedir marca 
+	pedir fabticante 
+
+	preguntar sie el tipo es alcohol
+		preguntar si el alcochol es el mas barato
+		(x)	guardar cantidad de unidades del mas barato 
+		(x)	guardar el fabricante del mas barato 
+			guardar el precio del mas barato 
+		fin si
+	fin si 
+
+
+	preguntar 
+		case	si es jabon
+			contar vaces que se compro jabon
+			acumulo las cantidades  
+		
+		case	si es barbijo 
+			contar vaces que se compro jabon
+			acumulo las cantidades  
+
+		case	si es alcohol 
+			contar vaces que se compro jabon
+			acumulo las cantidades  
+	fin 
+
+termino de repetir
+
+preguntar si la cantidad de jabones es mayor a la cantidad de barbijos y ademas a la cantiadd de 
+alcoholes 
+
+	calculo promedio para jabones 
+		sino la cantidad de babijos es mayor 
+			calculo promedio para barbijos 
+				sino 
+					calculo el promedio de alcoholes 
+fin preguntar*/
