@@ -2,115 +2,71 @@
 
 function mostrar() {
 	
-	let acumulador_barbijo =0; 
-	let acumulador_jabon = 0;
-	let acumulador_alcohol =0;
-	let contador_barbijo = 0; 
-	let contador_jabon = 0;
-	let contador_alcohol = 0;
+	let acumulador_alcohol;	
+	let bandera_alcoholBarato = true ;
+	let alcoholMas_barato = 0;
+	let unidades
+	
 
-	let precio_alcoholBarato = 0;
-	let fabricante_alcoholBarato ;
-	let cantidad_alcoholBarato = 0;
-	let fabricante ;
-	let marca = "";
-	let precio ;
-	let cantidad ;
-	let tipo ;
-	let contador = 0 ;
-	let bandera_alcohol = true ;
-	let mayorUnidades = 0;
-	let mayorTipo = "";
-	let promedioCompra = 0;
-	let mensaje = "";
+	let acumulador_barbijo;	
+	let acumulador_jabon ;
+
+	let contador_alcohol;
+	let contador_barbijo ;
+	let contador_jabon ;
+
+	let contador = 0;
+	let tipoIngresado = "";
+	let precioIngresado = 0;
+	let unidadesIngresadas = 0;
+	let marcaIngresada = "";
+	let fabricanteIngresado = "";
+
+
 
 	while(contador < 5)
 	{
-		tipo = prompt("Ingrese tipo de producto (barbijo , alcohol  o jabon)");
-		while(tipo != "barbijo" &&  tipo != "alcohol" && tipo != "jabon" )
+		tipoIngresado = prompt("Ingrese el tipo de prodiucto (barbijo , jabon , alcohol)");
+		while (tipoIngresado != "barbijo" || tipoIngresado != "jabon" || tipoIngresado != "alcohol")
 		{
-			tipo = prompt("ERROR , ingrese tipo (barbijo , alcohol  o jabon)");
+			tipoIngresado = prompt("ERROR !!!,Ingrese el tipo de prodiucto (barbijo , jabon , alcohol)");
 		}
 
-		precio  = prompt("Ingrese precio entre 100 y 300");
-		precio = parseInt(precio);
-		while(precio < 100 || precio > 300)
+		precioIngresado = prompt("Ingrese precio , no puede ser 0 o negativo y no debe superar las 1000 unidades");
+		precioIngresado = parseInt(precioIngresado);
+
+		while(precioIngresado >101 && precioIngresado < 301)
 		{
-			precio  = prompt("ERROR ,Ingrese precio entre 100 y 300");
-			precio = parseInt(precio);
+			precioIngresado = prompt("ERROR !!! ,Ingrese precio , no puede ser 0 o negativo y no debe superar las 1000 unidades");
+			precioIngresado = parseInt(precioIngresado);
+
 		}
 
-		cantidad = prompt ("Ingre la cantidad que quiere llevar ");
-		cantidad = parseInt(cantidad);
-		while (cantidad < 1 || cantidad > 1000)
+		unidadesIngresadas = prompt("Ingrese cantidad de unidades , no puede ser 0 o negativo y no debe superar las 1000 unidades");
+		unidadesIngresadas = parseInt(unidadesIngresadas);
+
+		while(unidadesIngresadas <= 0 || unidadesIngresadas > 1000)
 		{
-			cantidad = prompt ("ERROR ,Ingre la cantidad que quiere llevar entre 1 y 1000");
-			cantidad = parseInt(cantidad);
-			
+			unidadesIngresadas = prompt("ERROR !!! , Ingrese cantidad de unidades , no puede ser 0 o negativo y no debe superar las 1000 unidades");
+			unidadesIngresadas = parseInt(unidadesIngresadas);
 		}
-		marca = prompt("Ingrese marca");
-		fabricante = prompt("Ingrese fabricante ");
 
-
-		switch(tipo)
+		marcaIngresada = prompt("Ingrese nombre de la marca ");
+		fabricanteIngresado = prompt("Ingrese nombre del fabricante");
+		
+		switch(tipoIngresado)
 		{
 			case "barbijo":
-				acumulador_barbijo += cantidad ;
-				contador_barbijo ++;
-				break;
-			case "alcohol":
-				acumulador_alcohol += cantidad ;
-				contador_alcohol ++;
-
-				if(bandera_alcohol == true  || precio_alcoholBarato > precio)//A
-				{
-					precio_alcoholBarato = precio ;
-					cantidad_alcoholBarato = cantidad ;
-					fabricante_alcoholBarato = fabricante ;
-					bandera_alcohol = false ;
-				}
-				break;
 			case "jabon":
-				acumulador_jabon += cantidad ;//c
-				contador_jabon ++;
-				break;
-			default :
-		}
+			case "alcohol":
+				if(bandera_alcoholBarato == true || precioIngresado < alcoholMas_barato);
+				{
+					alcoholMas_barato = precioIngresado ;
+					bandera_alcoholBarato = false ;
+				}
 
-		contador++;
-	}
-	//b
-	if(acumulador_alcohol > acumulador_barbijo && acumulador_alcohol > acumulador_jabon)
-	{
-		mayorTipo = "alcohol";
-		promedioCompra = acumulador_alcohol/ contador_alcohol ;
-		mayorUnidades = acumulador_alcohol ;
-	}else
-	{
-		if(acumulador_barbijo > acumulador_alcohol && acumulador_barbijo > acumulador_jabon)
-		{
-			mayorTipo = "barbijo";
-			promedioCompra = acumulador_barbijo / contador_barbijo ;
-			mayorUnidades = acumulador_barbijo;
-		}else
-		{
-			if(acumulador_jabon > acumulador_alcohol && acumulador_jabon > acumulador_barbijo)
-			{
-				mayorTipo = "jabon";
-				promedioCompra = acumulador_jabon / contador_jabon;
-				mayorUnidades = acumulador_jabon ; 
-			}
 		}
 	}
-
-	mensaje = `
-	A- Del más barato de los alcohol, la cantidad de unidades es ${cantidad_alcoholBarato} y el fabricante es ${fabricante_alcoholBarato}
-	B- Del tipo con mas unidades es ${mayorTipo} y el promedio por compra es ${promedioCompra} 
-	C-La cantidad de jabones en total son ${acumulador_jabon}` ;
-
-	alert(mensaje)
-	
-
 
 
 }
@@ -463,3 +419,116 @@ alcoholes
 				sino 
 					calculo el promedio de alcoholes 
 fin preguntar*/
+
+/**
+	let acumulador_barbijo =0; 
+	let acumulador_jabon = 0;
+	let acumulador_alcohol =0;
+	let contador_barbijo = 0; 
+	let contador_jabon = 0;
+	let contador_alcohol = 0;
+	
+	let precio_alcoholBarato = 0;
+	let fabricante_alcoholBarato ;
+	let cantidad_alcoholBarato = 0;
+	let bandera_alcoholBarato = true ;
+	let fabricante ;
+	
+	let mensaje = "";
+	let marca = "";
+	let tipo ="";
+	let mayorTipo = "";
+	
+	let precio = 0;
+	let cantidad = 0;
+	let contador = 0 ;
+	let mayorUnidades = 0;
+	let promedioCompra = 0;
+
+	while(contador < 5)
+	{
+		tipo = prompt("Ingrese tipo de producto (barbijo , alcohol  o jabon)");
+		while(tipo != "barbijo" &&  tipo != "alcohol" && tipo != "jabon" )
+		{
+			tipo = prompt("ERROR , ingrese tipo (barbijo , alcohol  o jabon)");
+		}
+
+		precio  = prompt("Ingrese precio entre 100 y 300");
+		precio = parseInt(precio);
+		while(precio < 100 || precio > 300)
+		{
+			precio  = prompt("ERROR ,Ingrese precio entre 100 y 300");
+			precio = parseInt(precio);
+		}
+
+		cantidad = prompt ("Ingre la cantidad que quiere llevar ");
+		cantidad = parseInt(cantidad);
+		while (cantidad < 1 || cantidad > 1000)
+		{
+			cantidad = prompt ("ERROR ,Ingre la cantidad que quiere llevar entre 1 y 1000");
+			cantidad = parseInt(cantidad);
+			
+		}
+		marca = prompt("Ingrese marca");
+		fabricante = prompt("Ingrese fabricante ");
+
+
+		switch(tipo)
+		{
+			case "barbijo":
+				acumulador_barbijo += cantidad ;
+				contador_barbijo ++;
+				break;
+			case "alcohol":
+				acumulador_alcohol += cantidad ;
+				contador_alcohol ++;
+
+				if(bandera_alcoholBarato == true  || precio_alcoholBarato > precio)//A
+				{
+					precio_alcoholBarato = precio ;
+					cantidad_alcoholBarato = cantidad ;
+					fabricante_alcoholBarato = fabricante ;
+					bandera_alcoholBarato = false ;
+				}
+				break;
+			case "jabon":
+				acumulador_jabon += cantidad ;//c
+				contador_jabon ++;
+				break;
+			default :
+		}
+
+		contador++;
+	}
+	//b
+	if(acumulador_alcohol > acumulador_barbijo && acumulador_alcohol > acumulador_jabon)
+	{
+		mayorTipo = "alcohol";
+		promedioCompra = acumulador_alcohol/ contador_alcohol ;
+		mayorUnidades = acumulador_alcohol ;
+	}else
+	{
+		if(acumulador_barbijo > acumulador_alcohol && acumulador_barbijo > acumulador_jabon)
+		{
+			mayorTipo = "barbijo";
+			promedioCompra = acumulador_barbijo / contador_barbijo ;
+			mayorUnidades = acumulador_barbijo;
+		}else
+		{
+			if(acumulador_jabon > acumulador_alcohol && acumulador_jabon > acumulador_barbijo)
+			{
+				mayorTipo = "jabon";
+				promedioCompra = acumulador_jabon / contador_jabon;
+				mayorUnidades = acumulador_jabon ; 
+			}
+		}
+	}
+
+	mensaje = `
+	A- Del más barato de los alcohol, la cantidad de unidades es ${cantidad_alcoholBarato} y el fabricante es ${fabricante_alcoholBarato}
+	B- Del tipo con mas unidades es ${mayorTipo} y el promedio por compra es ${promedioCompra} 
+	C-La cantidad de jabones en total son ${acumulador_jabon}` ;
+
+	alert(mensaje)
+	
+ */
