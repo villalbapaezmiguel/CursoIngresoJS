@@ -6,8 +6,15 @@ function mostrar()
 	let esatadoCivil ;
 	let temperatura ;
 	let pregunta = "si";
-	let nombrePersonaAlta ;
-	let temperaturaMas_alta ;
+	let nombre_temperaturaAlta ;
+	let temperaturaMas_alta = 0;
+	let bandera_Temperatura = true ;
+	let contadorViudos = 0;
+	let contadorSoltero = 0;
+	let contadorTemperatura_terceraEdad = 0;
+	let acumulador_edad_soltero=0;
+	let promedioEdad_soltero = 0;
+	let mensaje = "";
 
 	while(pregunta == "si")
 	{
@@ -44,20 +51,44 @@ function mostrar()
 			temperatura = prompt("ERROR , Ingrese la temperatura");
 			temperatura = parseInt(temperatura);
 		}
-		
+		//a
+		if(bandera_Temperatura == true || temperatura > temperaturaMas_alta)
+		{
+			nombre_temperaturaAlta = nombre ;
+			temperaturaMas_alta = temperatura ;
+			bandera_Temperatura = false ;
+		}
 
 		switch(esatadoCivil)
 		{
 			case "casado":
-
-			case "soltero":
-			case "viudo":
+			case "soltero"://c , b y e
+				contadorSoltero ++;
+				acumulador_edad_soltero = edad ;
+				promedioEdad_soltero = acumulador_edad_soltero /contadorSoltero ;
+				break ;
+			case "viudo"://b
+				contadorViudos ++;
+				break ;
 		}
-
+		//d
+		if(edad > 60 && temperatura > 38)
+		{
+			contadorTemperatura_terceraEdad ++;
+		}
 
 		pregunta = prompt("quiere ingresar mas psajeros ??");
 	}
 
+	mensaje = `
+	A- El nombre de la persona con mas temperatura es : ${nombre_temperaturaAlta}
+	B- La cantidad de mayores de edad viudos es : ${contadorViudos}
+	C- La cantidad de hombres que hay solteros es: ${contadorSoltero} viudos es : ${contadorViudos}
+	D- La cantidad de personas de la tercera edad que tienen mas de 38 de temperatura es : ${contadorTemperatura_terceraEdad}
+	E- El promedio de edad entre los hombres solteros es :${promedioEdad_soltero}`;
+
+	alert(mensaje);
+	//probar
 	
 
 
