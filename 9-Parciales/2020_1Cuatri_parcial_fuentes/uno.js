@@ -2,7 +2,91 @@
 
 function mostrar() {
 	
-	let acumulador_alcohol;	
+	let tipo ;
+	let precio;
+	let cantidad ;
+	let marca ; 
+	let fabricante ;
+	let bandera_alcoholBarato = true;
+	let i ;
+	let precio_alcoholBarato;
+	let fabricante_alcoholBarato;
+
+	for(i = 0 ; i < 5 ; i++) 
+	{
+		tipo = prompt("ingrese tipo");
+		tipo = tipo.toLowerCase();
+
+		while(isNaN(tipo) == false  || tipo != "jabon" || tipo != "barbijo" || tipo != "alcohol")
+		{
+			tipo = prompt("EEROR, ingrese tipo");
+		}
+
+		precio = prompt("ingrese precio");
+		precio = parseInt(precio);
+		
+		while(precio < 100 || precio > 300 )
+		{
+			precio = prompt("ERROR ,ingrese precio");
+			precio = parseInt(precio);
+		}
+
+		cantidad = prompt("ingrese cantidad ");
+		cantidad = parseInt(cantidad);
+		//validar cantidad 
+		marca = prompt("ingrese marca ");
+		fabricante = prompt("ingrese fabricante");
+
+		if(tipo == "alcohol")
+		{
+
+			if(bandera_alcoholBarato == true || precio < precio_alcoholBarato)
+			{
+				precio_alcoholBarato  = precio ;
+				
+			}
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*let acumulador_alcohol;	
 	let bandera_alcoholBarato = true ;
 	let alcoholMas_barato = 0;
 	let unidades
@@ -68,7 +152,7 @@ function mostrar() {
 		}
 	}
 
-
+*/
 }
 /**Debemos realizar la carga de 5(cinco) productos de prevención de contagio,
 de cada una debo obtener los siguientes datos:
@@ -531,4 +615,5 @@ fin preguntar*/
 
 	alert(mensaje)
 	
+	//MIGUEL Villalba Paez
  */

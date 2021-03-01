@@ -144,3 +144,4 @@ function mostrar()
  b) el importe total a pagar con descuento(solo si corresponde)
 d) Informar el tipo con mas cantidad de bolsas.
 f) El tipo mas caro */
+//Miguel Villalba Paez
