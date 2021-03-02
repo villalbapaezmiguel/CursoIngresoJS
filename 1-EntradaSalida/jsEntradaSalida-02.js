@@ -96,7 +96,7 @@ function mostrar()
             nombrePais_temperatura_minima = paisIngresado ;
         }
         
-
+        contador ++;
     }
 
     if(continente == "europa" && nivelPobresa == "pobre")

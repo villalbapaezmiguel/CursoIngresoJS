@@ -58,16 +58,17 @@ function mostrar()
 		}
 
 		raza = prompt("ingrese el nombre de la raza");
+		
 		peso = prompt("ingrese peso");
 		peso = parseInt(peso);
-
-		while(isNaN(peso) == true)
+		while(isNaN(peso) == true || peso < 150 && peso >1)
 		{
 			peso = prompt("ERROR, ingrese peso");
 			peso = parseInt(peso);
 		}
 
 		estadoClinico = prompt("ingrese esatdo clinico (enfermo,internado o adopcion) ");
+		estadoClinico = estadoClinico.toLowerCase();//hacerlo para todo
 		while(estadoClinico != "enfermo" && estadoClinico != "internado" && estadoClinico != "adopcion")
 		{
 			estadoClinico = prompt("ERROR, ingrese esatdo clinico (enfermo,internado o adopcion) ");
@@ -75,7 +76,7 @@ function mostrar()
 
 		temmperaturaCorporal = prompt("ingrese temperatura corporal ");
 		temmperaturaCorporal = parseInt(temmperaturaCorporal);
-		while(isNaN(temmperaturaCorporal) == true)
+		while(isNaN(temmperaturaCorporal) == true || temmperaturaCorporal <1 || temmperaturaCorporal>80)//clase abel
 		{
 			temmperaturaCorporal = prompt("ERROR ,ingrese temperatura corporal ");
 			temmperaturaCorporal = parseInt(temmperaturaCorporal);
@@ -127,7 +128,7 @@ function mostrar()
 			animasSinPelo_temperaturaBaja = temmperaturaCorporal ;
 		}
 
-
+		contador ++;
 	}
 
 	//E
