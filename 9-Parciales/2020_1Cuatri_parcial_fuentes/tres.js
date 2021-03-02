@@ -39,7 +39,7 @@ function mostrar()
 		}
 		
 		esatadoCivil = prompt("Ingrese su esatado civil (soltero, casado o viudo) ");
-		while(esatadoCivil != "soltero" || esatadoCivil != "casado" || esatadoCivil != "viudo" )
+		while(esatadoCivil != "soltero" && esatadoCivil != "casado" && esatadoCivil != "viudo" )
 		{
 			esatadoCivil = prompt("ERROR , Ingrese su esatado civil (soltero, casado o viudo) ");
 		}
